@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<!-- HEADER -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Домашний психолог</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <div class="page-grid">
+
+<!-- Шапка сайта  -->
+    <header>
+      <nav class="main-nav">
+        <a href="main.html">Главная</a>
+        <a href="about.html">Больше теории</a>
+        <a href="gallery.html">Галерея</a>
+        <a href="subscribe.html">Подписки</a>
+        <a href="other.html">Пройти тест</a>
+      </nav>
+      <button id="themeToggle" class="theme-toggle-btn">🌙</button>
+    </header>
+
+    <main>
+
+<!-- Выпадающее меню-бургер -->
+    <input type="checkbox" id="burger" class="burger-checkbox">
+    <label for="burger" class="burger-label">
+    <span class="burger-line"></span>
+    </label>
+    <nav class="burger-menu">
+        <ul>
+            <a href="#freud">О Фрейде</a>
+            <a href="#berne">О Берне</a>
+            <a href="#adler">О Адлере</a>
+            <a href="#jung">О Юнге</a>
+            <a href="#frankl">О Франкле</a>
+        </ul>
+    </nav>
+
+<!-- Информация о Фрейде -->
+    <section id="freud">
+        <h2>Зигмунд Фрейд</h2>
+        <div class="image-container">
+            <img src="C:\Users\Max\Desktop\html задания\фрейд.png" alt="Зигмунд Фрейд">
+            <div class="image-overlay">
+                <div class="image-title">Зигмунд Фрейд</div>
+            </div>
+        </div>
+        <h3>Кто он?</h3>
+        <p>Зигмунд Фрейд считается основоположником психоанализа, заложившего основы современного понимания бессознательных процессов. Его ключевой вклад — структурная модель психики: <strong>Ид (Оно), Эго (Я) и Супер-Эго (Сверх-Я)</strong>.</p>
+        <h3>Структура личности по Фрейду</h3>
+        <ul>
+            <li><strong>   Ид</strong> — источник врождённых влечений, действует по принципу удовольствия.</li>
+            <li><strong>   Эго</strong> — посредник между Ид и внешним миром.</li>
+            <li><strong>   Супер-Эго</strong> — интроецированные моральные нормы.</li>
+        </ul>
+
+        <h3>Неврозы и психозы</h3>
+        <dl>
+            <dt>«Невроз»</dt>
+            <dd>Конфликт между Эго-состояниями: «Родитель», «Взрослый» и «Ребёнок». Например, внутреннее «Хочу» (Ребёнок) сталкивается с требованием «Надо» (Критический Родитель). Человек осознаёт проблему и сохраняет контакт с реальностью. Характерны тревожность, навязчивости, истерические реакции и психосоматические расстройства.</dd>
+
+            <dt>«Психоз»</dt>
+            <dd>Разрыв в системе Эго-состояний и утрата контроля со стороны «Взрослого». Человек теряет связь с реальностью — появляются бред, галлюцинации, дезорганизованное мышление. В терминах транзактного анализа — «Взрослый»</dd>
+        </dl>
+    </section>
+
+    <hr>
+    
+<!-- Информация о Юнге -->
+    <section id="jung">
+      <h2>Карл Густав Юнг</h2>
+      <div class="image-container">
+        <img src="C:\Users\Max\Desktop\html задания\ung.jpg" alt="Карл Густав Юнг">
+        <div class="image-overlay">
+          <div class="image-title">Карл Густав Юнг</div>
+        </div>
+      </div>
+      <h3>Кто он?</h3>
+      <p>Карл Густав Юнг — швейцарский психиатр, ученик и последователь Фрейда, позже создавший собственное направление — <strong>аналитическую психологию</strong>. Он расширил концепцию бессознательного, введя идею <strong>коллективного бессознательного</strong> и <strong>архетипов</strong>.</p>
+      <h3>Основные концепции</h3>
+      <ul>
+        <li><strong>Коллективное бессознательное</strong> — общечеловеческий пласт психики, содержащий архетипы.</li>
+        <li><strong>Архетипы</strong> — универсальные образы (Тень, Анима/Анимус, Самость, Мудрец и др.).</li>
+        <li><strong>Индивидуация</strong> — процесс становления целостной личности через интеграцию сознательного и бессознательного.</li>
+      </ul>
+
+      <h3>Типология личности</h3>
+      <dl>
+        <dt>Экстраверсия и интроверсия</dt>
+        <dd>Юнг ввёл эти понятия как основные ориентации психической энергии: во внешний мир (экстраверсия) или во внутренний (интроверсия). Эта идея легла в основу многих современных тестов, включая MBTI.</dd>
+      </dl>
+    </section>
+
+    <hr>
+
+<!-- Информация об Адлере -->
+    <section id="adler">
+      <h2>Альфред Адлер</h2>
+      <div class="image-container">
+        <img src="C:\Users\Max\Desktop\html задания\adler.jpg" alt="Альфред Адлер">
+        <div class="image-overlay">
+          <div class="image-title">Альфред Адлер</div>
+        </div>
+      </div>
+      <h3>Кто он?</h3>
+      <p>Альфред Адлер — австрийский врач и психолог, основатель <strong>индивидуальной психологии</strong>. Он был одним из первых, кто отошёл от фрейдизма, утверждая, что главной движущей силой человека является не сексуальность, а стремление к <strong>преодолению чувства неполноценности</strong> и достижению превосходства.</p>
+      <h3>Центральные идеи</h3>
+      <ul>
+        <li><strong>Чувство неполноценности</strong> — врождённое переживание слабости, стимулирующее развитие.</li>
+        <li><strong>Комплекс неполноценности</strong> — патологическое состояние, когда человек не может компенсировать это чувство.</li>
+        <li><strong>Стиль жизни</strong> — уникальная стратегия, с помощью которой человек стремится к цели превосходства.</li>
+      </ul>
+
+      <h3>Социальный интерес</h3>
+      <dl>
+        <dt>«Gemeinschaftsgefühl»</dt>
+        <dd>Адлер подчёркивал важность социальной вовлечённости и сотрудничества. Здоровая личность, по его мнению, обладает развитым «социальным интересом» — стремлением внести вклад в общество. Без этого любое «превосходство» становится токсичным или навязчивым.</dd>
+      </dl>
+    </section>
+
+    <hr>
+
+<!-- Информация о Франкле -->
+    <section id="frankl">
+      <h2>Виктор Франкл</h2>
+      <div class="image-container">
+        <img src="C:\Users\Max\Desktop\html задания\viktor.jpg" alt="Виктор Франкл">
+        <div class="image-overlay">
+          <div class="image-title">Виктор Франкл</div>
+        </div>
+      </div>
+      <h3>Кто он?</h3>
+      <p>Виктор Франкл — австрийский психиатр и психолог, основатель <strong>логотерапии</strong>, или «психотерапии смысла». Переживший Холокост, он пришёл к выводу, что главный мотив человеческой жизни — стремление к <strong>осмысленности</strong>, а не к удовольствию (как у Фрейда) или власти (как у Адлера).</p>
+      <h3>Ключевые идеи</h3>
+      <ul>
+        <li><strong>Воля к смыслу</strong> — фундаментальное стремление человека найти смысл даже в страдании.</li>
+        <li><strong>Логотерапия</strong> — метод, помогающий пациенту обнаружить личный смысл жизни.</li>
+        <li><strong>Трагический оптимизм</strong> — способность сохранять надежду даже в условиях неизбежного страдания.</li>
+      </ul>
+
+      <h3>Смысл в экстремальных условиях</h3>
+      <dl>
+        <dt>«Человек в поисках смысла»</dt>
+        <dd>В своей знаменитой книге Франкл описывает, как заключённые концлагерей, находившие «почему жить», выживали даже при физическом истощении. Смысл, по его мнению, можно найти в творчестве, любви и даже в достойном принятии неизбежного страдания.</dd>
+      </dl>
+    </section>
+
+    <hr>
+
+<!-- Информация о Эрике Берне -->
+    <section id="berne">
+        <h2>Эрик Берн</h2>
+        <div class="image-container">
+            <img src="C:\Users\Max\Desktop\html задания\берн.jpeg" alt="Эрик Берн">
+            <div class="image-overlay">
+                <div class="image-title">Эрик Берн</div>
+            </div>
+        </div>
+        <h3>Кто он?</h3>
+        <p>Американский психолог и психиатр, известный как разработчик трансакционного анализа и сценарного анализа. Родился 10 мая 1910 года в Монреале. В 1943 году Берн вступил в Армейский медицинский корпус как психиатр. Берн написал более шестнадцати работ, в которых рассматриваются все стороны сценарного и трансакционного анализа.</p>
+        <h3>Что за анализ такой?</h3>
+        <p>Берн предложил <strong>транзактный анализ (ТА)</strong> — систему анализа личности и общения. В отличие от Фрейда, он выделил три <em>эго-состояния</em>, которые можно наблюдать в коммуникации:</p>
+        <dl>
+            <dt>«Родитель»</dt> 
+            <dd>Усвоенные нормы, правила, запреты.</dd>
+            <dt>«Взрослый»</dt> 
+            <dd>Рациональная часть, анализ информации, принятие решений.</dd>
+            <dt>«Ребёнок»</dt> 
+            <dd>Эмоции, спонтанные реакции, детские сценарии.</dd>
+        </dl>
+        <p>Взаимодействие между людьми — это <strong>транзакции</strong> (обмен сообщениями между эго-состояниями). Анализ транзакций помогает выявить скрытые сценарии общения.</p>
+    </section>
+    <hr>
+
+<!-- Заключение -->
+    <section id="conclusion">
+      <h2>Заключение</h2>
+      <p>
+        Психология — это не просто набор теорий, а живая карта внутреннего мира, составленная великими мыслителями прошлого. 
+        <strong>Фрейд</strong> первым заглянул в глубины бессознательного и показал, что за нашими поступками стоят скрытые мотивы. 
+        <strong>Юнг</strong> расширил эту карту, добавив архетипы и путь к целостности — «индивидуацию». 
+        <strong>Адлер</strong> напомнил: мы не жертвы обстоятельств, а творцы своей жизни, стремящиеся к смыслу и принадлежности. 
+        <strong>Франкл</strong>, переживший ад концлагеря, доказал, что даже в самых тяжёлых условиях человек может найти <strong>смысл</strong> — и именно он даёт силы жить. 
+        А <strong>Берн</strong> сделал всё это понятным в повседневности: через игры, транзакции и три простых состояния — «Родитель», «Взрослый», «Ребёнок».
+      </p>
+      <p>
+        Все эти идеи — не для музеев. Они работают <strong>здесь и сейчас</strong>:  
+        — в конфликтах с близкими,  
+        — в выборе профессии,  
+        — в борьбе с тревогой,  
+        — в поиске своего пути.
+      </p>
+      <p>
+        Но одна статья — лишь введение. Чтобы <strong>действительно понять</strong> и <strong>применить</strong> эти знания, нужна системная работа.
+      </p>
+    </section>
+
+<!-- Миниатюры -->
+    <section class="image-gallery">
+      <div class="main-image-container">
+        <img id="mainImage" src="C:\Users\Max\Desktop\html задания\фрейд.png" alt="Зигмунд Фрейд">
+        <div class="main-image-title" id="mainTitle">Зигмунд Фрейд</div>
+      </div>
+
+
+      <div class="thumbnails">
+        <img src="C:\Users\Max\Desktop\html задания\фрейд.png" class="thumbnail active">
+        <img src="C:\Users\Max\Desktop\html задания\ung.jpg" class="thumbnail">
+        <img src="C:\Users\Max\Desktop\html задания\adler.jpg" class="thumbnail">
+        <img src="C:\Users\Max\Desktop\html задания\viktor.jpg" class="thumbnail">
+        <img src="C:\Users\Max\Desktop\html задания\берн.jpeg" class="thumbnail">
+      </div>
+    </section>
+
+<!-- Уведомления -->
+    <div class="notifications">
+        <div class="bell">🔔</div>
+        <div class="notification-badge">1</div>
+        <ul class="notification-list">
+        </ul>
+    </div>
+</main>
+</form>
+      <div class="button-group">
+            <a href="#freud" class="btn btn-blue">О Фрейде</a>
+            <a href="#jung" class="btn btn-purple">О Юнге</a>
+            <a href="#adler" class="btn btn-cyan">О Адлере</a>
+            <a href="#frankl" class="btn btn-teal">О Франкле</a>
+            <a href="#berne" class="btn btn-blue">О Берне</a>
+      </div>
+
+<!-- Регистрация -->
+<div id="regIcon" class="reg-icon">👤</div>
+<div id="captchaModal" class="modal">
+  <div class="modal-content" style="width: 320px; padding: 24px;">
+    <h2>Проверка безопасности</h2>
+    <p id="captchaPrompt" style="font-size: 1.2rem; margin: 12px 0;"></p>
+    <input type="number" id="captchaAnswer" placeholder="Ваш ответ" autocomplete="off" style="width:100%; padding:10px; margin:10px 0; border-radius:25px; border:none;">
+    <p id="captchaError" style="color: #e74c3c; min-height: 1.2rem; font-size:0.9rem;"></p>
+    <button id="submitCaptcha" style="width:100%; padding:12px; background:var(--color-primary); color:white; border:none; border-radius:25px; cursor:pointer;">Продолжить</button>
+  </div>
+</div>
+<div id="regModal" class="modal">
+  <div class="modal-content" style="width: 340px; padding: 30px;">
+    <h2>Регистрация</h2>
+    <form id="regForm">
+      <input type="text" id="regName" placeholder="Имя" required style="width:100%; padding:12px; margin:8px 0; border:none; border-radius:25px; background:rgba(255,255,255,0.15); color:white; outline:none;">
+      <input type="email" id="regEmail" placeholder="Почта" required style="width:100%; padding:12px; margin:8px 0; border:none; border-radius:25px; background:rgba(255,255,255,0.15); color:white; outline:none;">
+      <input type="password" id="regPassword" placeholder="Пароль" required style="width:100%; padding:12px; margin:8px 0; border:none; border-radius:25px; background:rgba(255,255,255,0.15); color:white; outline:none;">
+      <p id="regError" style="color: #e74c3c; min-height: 1.2rem; font-size:0.9rem; margin: 8px 0;"></p>
+      <button type="submit" style="width:100%; padding:12px; background:var(--color-white); color:#000; border:none; border-radius:25px; font-weight:600; cursor:pointer;">Создать аккаунт</button>
+    </form>
+  </div>
+</div>
+
+<!-- Подвал  -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-contact">
+      <address>
+        Телефон: <a href="tel:+79533331181">+7 (953) 333-11-81</a><br>
+        Email: <a href="mailto:nicichin.max@yandex.ru">nicichin.max@yandex.ru</a>
+      </address>
+    </div>
+
+    <div class="footer-buttons">
+      <div class="button-group">
+        <button id="likeButton" class="like-btn">Мне нравится</button> 
+        <button id="drawButton" class="like-btn">
+          <span class="btn-text">Хочу порисовать</span>
+        </button>
+      </div>
+    </div>
+    <div class="footer-social">
+  <div class="social-buttons">
+<!--     <a href="https://vk.com" target="_blank" class="social-btn vk" aria-label="ВКонтакте">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.237c-.088 2.127-.396 6.073-.512 7.36-.053.597-.325.826-.907.958l-1.978.562c-.854.232-1.354.14-1.916-.475-3.036-2.94-4.243-4.417-6.216-6.43-.21-.224-.315-.402-.315-.642 0-.226.119-.452.357-.678.265-.253.627-.59 1.088-.82.573-.286 1.233-.42 1.857-.42.378 0 .807.063 1.233.217 1.142.396 2.137 1.227 2.953 2.473.227.34.49.882.528 1.16.014.102.021.21.021.318 0 .14-.042.266-.07.336-.021.07-.084.098-.126.098-.07 0-.476-.238-.91-.476l-.084-.056z"/>
+      </svg>
+    </a>
+    <a href="https://t.me" target="_blank" class="social-btn tg" aria-label="Telegram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.627 0 12 0zm5.894 8.237c-.088 2.127-.396 6.073-.512 7.36-.053.597-.325.826-.907.958l-1.978.562c-.854.232-1.354.14-1.916-.475-3.036-2.94-4.243-4.417-6.216-6.43-.21-.224-.315-.402-.315-.642 0-.226.119-.452.357-.678.265-.253.627-.59 1.088-.82.573-.286 1.233-.42 1.857-.42.378 0 .807.063 1.233.217 1.142.396 2.137 1.227 2.953 2.473.227.34.49.882.528 1.16.014.102.021.21.021.318 0 .14-.042.266-.07.336-.021.07-.084.098-.126.098-.07 0-.476-.238-.91-.476l-.084-.056z"/>
+      </svg>
+    </a> -->
+    <a href="#" class="social-btn gh" aria-label="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.94 0-1.32.465-2.4 1.23-3.255-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.545 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.855 1.23 1.935 1.23 3.255 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.11.81 2.235 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57C20.565 21.795 24 17.31 24 12c0-6.63-5.37-12-12-12z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+</footer>
+</body>
+</html>   
+<canvas id="drawingCanvas"></canvas>
+
+<!-- Мини-галерея -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const mainImage = document.getElementById('mainImage');
+  const mainTitle = document.getElementById('mainTitle');
+  const thumbnails = document.querySelectorAll('.thumbnail');
+  thumbnails.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      mainImage.src = thumb.src;
+      mainImage.alt = thumb.alt;
+      mainTitle.textContent = thumb.dataset.title || thumb.alt;
+      thumbnails.forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    });
+  });
+});
+</script>
+
+<!-- Регистрация -->
+<script>
+  const regIcon = document.getElementById('regIcon');
+  const captchaModal = document.getElementById('captchaModal');
+  const regModal = document.getElementById('regModal');
+  const captchaPrompt = document.getElementById('captchaPrompt');
+  const captchaAnswer = document.getElementById('captchaAnswer');
+  const submitCaptcha = document.getElementById('submitCaptcha');
+  const captchaError = document.getElementById('captchaError');
+  const regForm = document.getElementById('regForm');
+  const regError = document.getElementById('regError');
+  let num1, num2;
+
+  function generateCaptcha() {
+    num1 = Math.floor(Math.random() * 10) + 1;
+    num2 = Math.floor(Math.random() * 10) + 1;
+    captchaPrompt.textContent = `Сколько будет: ${num1} + ${num2}?`;
+    captchaAnswer.value = '';
+    captchaError.textContent = '';
+  }
+
+  regIcon.addEventListener('click', () => {
+    generateCaptcha();
+    captchaModal.classList.add('show');
+  });
+
+  [captchaModal, regModal].forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('show');
+    });
+  });
+
+  submitCaptcha.addEventListener('click', () => {
+    const ans = parseInt(captchaAnswer.value);
+    if (isNaN(ans)) {
+      captchaError.textContent = 'Введите число';
+      return;
+    }
+    if (ans === num1 + num2) {
+      captchaModal.classList.remove('show');
+      regModal.classList.add('show');
+    } else {
+      captchaError.textContent = 'Неверно! Попробуйте ещё раз.';
+      generateCaptcha(); 
+    }
+  });
+
+  regForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    regError.textContent = '';
+
+    const name = document.getElementById('regName').value.trim();
+    const email = document.getElementById('regEmail').value.trim();
+    const password = document.getElementById('regPassword').value;
+
+    if (!name || name.length < 2) {
+      regError.textContent = 'Имя должно быть от 2 символов';
+      return;
+    }
+    if (!email || !email.includes('@')) {
+      regError.textContent = 'Введите корректную почту';
+      return;
+    }
+    if (!password || password.length < 6) {
+      regError.textContent = 'Пароль должен быть не менее 6 символов';
+      return;
+    }
+
+    alert('✅ Регистрация успешна!\nДобро пожаловать, ' + name + '!');
+    regModal.classList.remove('show');
+    regForm.reset();
+  });
+</script>
+
+<!-- Рисование -->
+<script>
+    const drawButton = document.getElementById('drawButton');
+    const canvas = document.getElementById('drawingCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    let isDrawingMode = false;
+    let isDrawing = false;
+    let lastX = 0;
+    let lastY = 0;
+    
+    function setupCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        ctx.strokeStyle = '#2c3e50';
+        ctx.lineWidth = 3;
+        ctx.lineJoin = 'round';
+        ctx.lineCap = 'round';
+    }
+    
+    function toggleDrawingMode() {
+        isDrawingMode = !isDrawingMode;
+        
+        if (isDrawingMode) {
+            drawButton.classList.add('drawing-active');
+            drawButton.innerHTML = '<span class="btn-text">Остановить рисование</span>';
+            canvas.style.display = 'block';
+            canvas.classList.add('drawing-active');
+            setupCanvas();
+        } else {
+            drawButton.classList.remove('drawing-active');
+            drawButton.innerHTML = '<span class="btn-text">Режим рисования</span>';
+            canvas.style.display = 'none';
+            canvas.classList.remove('drawing-active');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    }
+    
+    drawButton.addEventListener('click', toggleDrawingMode);
+    
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && isDrawingMode) {
+            toggleDrawingMode();
+        }
+    });
+    
+    canvas.addEventListener('mousedown', (e) => {
+        if (!isDrawingMode) return;
+        isDrawing = true;
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+    });
+    
+    canvas.addEventListener('mousemove', (e) => {
+        if (!isDrawingMode || !isDrawing) return;
+        ctx.beginPath();
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+        [lastX, lastY] = [e.offsetX, e.offsetY];
+    });
+    
+    canvas.addEventListener('mouseup', () => isDrawing = false);
+    canvas.addEventListener('mouseout', () => isDrawing = false);
+    
+    window.addEventListener('resize', () => {
+        if (isDrawingMode) setupCanvas();
+    });
+</script>
+
+
+<!-- Кнопка лайка -->
+<script>
+        const likeButton = document.getElementById('likeButton');
+        likeButton.addEventListener('click', function() {
+            this.classList.toggle('liked');
+        });
+</script>
+<!-- Эффект паралакса -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const parallaxLayer = document.getElementById('parallaxLayer');
+    const fadeItems = document.querySelectorAll('section, .scientists-cards, #conclusion');
+    fadeItems.forEach(item => {
+      item.classList.add('fade-in-item');
+    });
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (parallaxLayer) {
+        parallaxLayer.style.transform = `translateY(${scrollY * 0.4}px)`;
+      }
+      fadeItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 100;
+        if (isVisible) {
+          item.classList.add('visible');
+        }
+      });
+    });
+    setTimeout(() => {
+      fadeItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 100;
+        if (isVisible) {
+          item.classList.add('visible');
+        }
+      });
+    }, 100);
+  });
+</script>
+<!-- Уведомления -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const notificationList = document.querySelector('.notification-list');
+    const badge = document.querySelector('.notification-badge');
+    const allNotifications = [
+      '🎉 Вам доступна бесплатная онлайн консультация!',
+      '👥 Группа "Транзактный анализ для начинающих" — запись открыта',
+      '🔥 Скидка 20% на все курсы по промокоду <strong>PSYHOLOGI</strong>!',
+      '🎁 Подарок новым участникам: бесплатный вебинар "Как выйти из психологических игр"'
+    ];
+    function createNotificationItem(text) {
+      const li = document.createElement('li');
+      li.innerHTML = `${text} <button class="close-notification">&times;</button>`;
+      li.style.display = 'flex';
+      li.style.alignItems = 'center';
+      li.style.opacity = '0';
+      li.style.transition = 'opacity 0.3s ease';
+
+      const closeBtn = li.querySelector('.close-notification');
+      closeBtn.style.cssText = `
+        background: none;
+        border: none;
+        color: #777;
+        font-weight: bold;
+        margin-left: 8px;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 1;
+        flex-shrink: 0;
+      `;
+
+      setTimeout(() => {
+        li.style.opacity = '1';
+      }, 10);
+
+      closeBtn.addEventListener('click', function () {
+        li.style.opacity = '0';
+        setTimeout(() => {
+          if (li.parentNode) {
+            li.parentNode.removeChild(li);
+            badge.textContent = notificationList.children.length;
+          }
+        }, 300);
+      });
+
+      return li;
+    }
+    notificationList.innerHTML = '';
+    for (let i = 0; i < 2; i++) {
+      notificationList.appendChild(createNotificationItem(allNotifications[i]));
+    }
+    badge.textContent = 2;
+    setTimeout(() => {
+      for (let i = 2; i < 4; i++) {
+        notificationList.appendChild(createNotificationItem(allNotifications[i]));
+      }
+      badge.textContent = notificationList.children.length;
+    }, 5000);
+  });
+</script>
+
+<!-- Смена темы -->
+<script>
+  const themes = {
+    light: {
+      '--color-bg': '#f8f4ed',
+      '--color-text': '#222',
+      '--color-primary': '#34495e',
+      '--color-secondary': '#34495e',
+      '--color-dark': '#2c3e50',
+      '--color-white': '#fff',
+      '--color-accent': '#3498db',
+      '--color-link-hover-bg': '#f0f5f9',
+      '--color-border-light': '#eee',
+      '--color-border-medium': '#ccc',
+      '--glass-bg': 'rgba(255, 255, 255, 0.08)',
+    },
+    dark: {
+      '--color-bg': '#1e1e1e',          
+      '--color-text': '#e0e0e0',       
+      '--color-primary': '#e0e0e0',     
+      '--color-secondary': '#e0e0e0',
+      '--color-dark': '#e0e0e0',
+      '--color-white': '#2d2d2d',       
+      '--color-accent': '#4fc3f7',
+      '--color-link-hover-bg': 'rgba(100, 181, 246, 0.1)',
+      '--color-border-light': '#333',
+      '--color-border-medium': '#444',
+      '--glass-bg': 'rgba(45, 45, 45, 0.6)',
+    }
+  };
+
+  const themeToggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  applyTheme(savedTheme);
+
+  function applyTheme(themeName) {
+    const theme = themes[themeName];
+    if (!theme) return;
+    for (const [key, value] of Object.entries(theme)) {
+      root.style.setProperty(key, value);
+    }
+    themeToggle.textContent = themeName === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('theme', themeName);
+  }
+
+  themeToggle?.addEventListener('click', () => {
+    const current = localStorage.getItem('theme') || 'light';
+    const next = current === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+  });
+</script>
+
+

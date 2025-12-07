@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>О психологии</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<!-- Шапка сайта  -->
+<header>
+  <nav class="main-nav">
+    <a href="main.html">Главная</a>
+    <a href="about.html">Больше теории</a>
+    <a href="gallery.html">Галерея</a>
+    <a href="subscribe.html">Подписки</a>
+    <a href="other.html">Пройти тест</a>
+  </nav>
+  <button id="themeToggle" class="theme-toggle-btn">🌙</button>
+</header>
+
+<!-- Уведомления -->
+<div class="notifications">
+  <div class="bell">🔔</div>
+  <div class="notification-badge">2</div>
+  <ul class="notification-list"></ul>
+</div>
+
+<!-- Выпадающее меню-бургер -->
+    <input type="checkbox" id="burger" class="burger-checkbox">
+    <label for="burger" class="burger-label">
+    <span class="burger-line"></span>
+    </label>
+    <nav class="burger-menu">
+        <ul>
+            <a href="#freud">О Фрейде</a>
+            <a href="#berne">О Берне</a>
+            <a href="#adler">О Адлере</a>
+            <a href="#jung">О Юнге</a>
+            <a href="#frankl">О Франкле</a>
+        </ul>
+    </nav> 
+
+<!-- Регистрация -->
+<div id="regIcon" class="reg-icon">👤</div>
+<div id="captchaModal" class="modal">
+  <div class="modal-content" style="width: 320px; padding: 24px;">
+    <h2>Проверка безопасности</h2>
+    <p id="captchaPrompt" style="font-size: 1.2rem; margin: 12px 0;"></p>
+    <input type="number" id="captchaAnswer" placeholder="Ваш ответ" autocomplete="off" style="width:100%; padding:10px; margin:10px 0; border-radius:25px; border:none;">
+    <p id="captchaError" style="color: #e74c3c; min-height: 1.2rem; font-size:0.9rem;"></p>
+    <button id="submitCaptcha" style="width:100%; padding:12px; background:var(--color-primary); color:white; border:none; border-radius:25px; cursor:pointer;">Продолжить</button>
+  </div>
+</div>
+<div id="regModal" class="modal">
+  <div class="modal-content" style="width: 340px; padding: 30px;">
+    <h2>Регистрация</h2>
+    <form id="regForm">
+      <input type="text" id="regName" placeholder="Имя" required style="width:100%; padding:12px; margin:8px 0; border:none; border-radius:25px; background:rgba(255,255,255,0.15); color:white; outline:none;">
+      <input type="email" id="regEmail" placeholder="Почта" required style="width:100%; padding:12px; margin:8px 0; border:none; border-radius:25px; background:rgba(255,255,255,0.15); color:white; outline:none;">
+      <input type="password" id="regPassword" placeholder="Пароль" required style="width:100%; padding:12px; margin:8px 0; border:none; border-radius:25px; background:rgba(255,255,255,0.15); color:white; outline:none;">
+      <p id="regError" style="color: #e74c3c; min-height: 1.2rem; font-size:0.9rem; margin: 8px 0;"></p>
+      <button type="submit" style="width:100%; padding:12px; background:var(--color-white); color:#000; border:none; border-radius:25px; font-weight:600; cursor:pointer;">Создать аккаунт</button>
+    </form>
+  </div>
+</div>
+
+<body id="page-about">
+<div class="page-grid">
+<main>
+  <section class="subscription-offer">
+  <h1>Психология — не только для чтения, но и для жизни</h1>
+  <div class="offer-content">
+    <p>
+      Вы узнали о Фрейде, Юнге, Адлере, Франкле и Берне. Но теория сама по себе не изменит вас. Наши курсы — это не лекции, а практика, которую вы сразу применяете в жизни.
+      <strong>Изменения начинаются, когда знания становятся инструментами.</strong>
+    </p>
+    <p class="offer-content">
+      Подписка — это не покупка контента. Это инвестиция в ясность, внутреннюю свободу и качество вашей жизни.
+      А ещё — отличный подарок близкому человеку, который ищет себя. Вместе с подпиской любого уровня вы получаете доступ к электронной библиотеке "Домашняя психология". А это доступ более чем к тысячам книг учёных-психологов со всего мира!
+    </p>
+    <p class="offer-content">
+      На странице теста мы поможем вам с выбором вашей первой книги, которая погрузит вас в увлекательный мир психологии!
+    </p>
+  </div>
+</section>
+
+<!-- Подписки -->
+  <section class="subscription-cards">
+  <h2>Выберите свой уровень доступа к знаниям</h2>
+  <div class="cards-grid">
+    <div class="sub-card">
+      <h3>Новичок</h3>
+      <div class="price">$5</div>
+      <p>Базовый доступ к материалам. Идеально для старта.</p>
+      <button class="btn-cart">Добавить в корзину</button>
+    </div>
+    <div class="sub-card">
+      <h3>Любитель</h3>
+      <div class="price">$19</div>
+      <p>Полный доступ + практические задания и тесты.</p>
+      <button class="btn-cart">Добавить в корзину</button>
+    </div>
+    <div class="sub-card">
+      <h3>Гуру</h3>
+      <div class="price">$29</div>
+      <p>Всё включено + консультации и персональная поддержка.</p>
+      <button class="btn-cart">Добавить в корзину</button>
+    </div>
+  </div>
+  </section>
+
+<!-- Корзина -->
+  <div id="basket">
+    <button id="openBasket">🛒 Корзина (<span id="basketCount">0</span>)</button>
+    <div id="basketList"></div>
+  </div>
+
+    <hr>
+
+<!-- Карта -->
+  <section id="map-section">
+      <h1>Наш центр</h1>
+      <div class="map-container">
+          <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.0723442362893!2d37.49283267710353!3d55.70907757203014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54c1a1a1a1a1a%3A0x4c5a5a5a5a5a5a5a!2z0JzQsNCz0LXQutGB0LrQsCDQn9C10YDQtdC30LDRgtC40YTRgSDQn9C10YDQtdC30LDRgtC40L3QsCDQoNC10YDQtdC30LDRgtC40L3QsCDQnNC-0YHQutC%2B0LLRgdC60LjQuSwgNzg!5e0!3m2!1sru!2sru!4v1713000000000!5m2!1sru!2sru"
+              width="100%"
+              height="400"
+              style="border:0; border-radius: 8px;"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+      </div>
+  </section>
+  </main>
+</body>
+</html>
+
+<!-- ЗАМЕТКИ -->
+<div id="notes-app" style="max-width: 600px; margin: 2rem auto; padding: 1rem; background: #f8f9fa; border-radius: 12px;">
+  <h1>Заметки</h1>
+
+  <div style="display: flex; gap: 10px; margin-bottom: 1rem;">
+    <input type="text" id="noteInput" placeholder="Введите заметку..." style="flex: 1; padding: 8px; border: 1px solid #ccc; border-radius: 6px;">
+    <button onclick="addNote()" style="padding: 8px 16px; background: var(--color-primary, #2980b9); color: white; border: none; border-radius: 6px; cursor: pointer;">
+      Добавить
+    </button>
+  </div>
+
+  <ul id="notesList" style="list-style: none; padding: 0; margin: 0;">
+  </ul>
+  <button onclick="clearNotes()" style="margin-top: 1rem; padding: 6px 12px; background: #e74c3c; color: white; border: none; border-radius: 6px; cursor: pointer;">
+    Очистить все
+  </button>
+</div>
+
+<script>
+  let notes = JSON.parse(localStorage.getItem('userNotes')) || [];
+  function saveNotes() {
+    localStorage.setItem('userNotes', JSON.stringify(notes));
+  }
+
+  function renderNotes() {
+    const list = document.getElementById('notesList');
+    list.innerHTML = notes.map((note, index) => `
+      <li style="padding: 8px; margin-bottom: 8px; background: white; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+        ${note}
+        <button onclick="deleteNote(${index})" style="float: right; background: none; border: none; color: #e74c3c; cursor: pointer; font-size: 1.2rem;">🗑️</button>
+        <div style="clear: both;"></div>
+      </li>
+    `).join('');
+  }
+  function addNote() {
+    const input = document.getElementById('noteInput');
+    const text = input.value.trim();
+    if (text) {
+      notes.push(text);
+      saveNotes();
+      renderNotes();
+      input.value = '';
+    }
+  }
+  function deleteNote(index) {
+    notes.splice(index, 1);
+    saveNotes();
+    renderNotes();
+  }
+  function clearNotes() {
+    if (confirm('Удалить все заметки?')) {
+      notes = [];
+      saveNotes();
+      renderNotes();
+    }
+  }
+
+  renderNotes();
+  document.getElementById('noteInput').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') addNote();
+  });
+</script>
+
+<!-- КОРЗИНА -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const basket = {
+    items: [],
+    total: 0,
+
+    add(tier, price) {
+      const existing = this.items.find(item => item.tier === tier);
+      if (existing) {
+        existing.quantity += 1;
+      } else {
+        this.items.push({ tier, price, quantity: 1 });
+      }
+      this.updateUI();
+    },
+
+    changeQuantity(index, delta) {
+      if (index < 0 || index >= this.items.length) return;
+      this.items[index].quantity += delta;
+      if (this.items[index].quantity <= 0) {
+        this.items.splice(index, 1);
+      }
+      this.updateUI();
+    },
+
+    clear() {
+      this.items = [];
+      this.total = 0;
+      this.updateUI();
+    },
+
+    sort(ascending = true) {
+      this.items.sort((a, b) => {
+        const totalA = a.price * a.quantity;
+        const totalB = b.price * b.quantity;
+        return ascending ? totalA - totalB : totalB - totalA;
+      });
+      this.updateUI();
+    },
+
+    updateUI() {
+      const countEl = document.getElementById('basketCount');
+      const listEl = document.getElementById('basketList');
+
+      let totalCount = 0;
+      this.total = 0;
+      this.items.forEach(item => {
+        totalCount += item.quantity;
+        this.total += item.price * item.quantity;
+      });
+
+      countEl.textContent = totalCount;
+
+      if (this.items.length === 0) {
+        listEl.innerHTML = '<p>Корзина пуста</p>';
+      } else {
+        listEl.innerHTML = `
+          <p><strong>Ваша корзина:</strong></p>
+          ${this.items.map((item, index) => `
+            <div class="basket-item">
+              <span>${item.tier}</span>
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <span>$${item.price} × ${item.quantity}</span>
+                <div class="quantity-controls">
+                  <button class="quantity-btn remove-item" data-index="${index}">–</button>
+                  <span class="quantity-display">${item.quantity}</span>
+                  <button class="quantity-btn add-item" data-index="${index}">+</button>
+                </div>
+              </div>
+            </div>
+          `).join('')}
+          <p><strong>Итого: $${this.total.toFixed(2)}</strong></p>
+          <div class="sort-controls">
+            <button class="sort-btn sort-asc">Сначала дешёвые</button>
+            <button class="sort-btn sort-desc">Сначала дорогие</button>
+          </div>
+          <button id="buyBasketBtn">Оплатить покупки</button>
+          <button id="clearBasketBtn">Очистить корзину</button>
+        `;
+      }
+
+      // Обработчики кнопок
+      document.querySelectorAll('.remove-item').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const index = parseInt(e.target.dataset.index);
+          this.changeQuantity(index, -1);
+        });
+      });
+
+      document.querySelectorAll('.add-item').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const index = parseInt(e.target.dataset.index);
+          this.changeQuantity(index, +1);
+        });
+      });
+
+      document.querySelector('.sort-asc')?.addEventListener('click', () => this.sort(true));
+      document.querySelector('.sort-desc')?.addEventListener('click', () => this.sort(false));
+
+      document.getElementById('clearBasketBtn')?.addEventListener('click', () => this.clear());
+    },
+
+    toggle() {
+      const list = document.getElementById('basketList');
+      const isVisible = list.style.display === 'block';
+      list.style.display = isVisible ? 'none' : 'block';
+    }
+  };
+
+  // Открытие корзины
+  document.getElementById('openBasket')?.addEventListener('click', () => basket.toggle());
+
+  // Добавление подписок
+  document.querySelectorAll('.btn-cart').forEach((btn, index) => {
+    const tiers = ['Новичок', 'Любитель', 'Гуру'];
+    const prices = [5, 19, 29];
+    btn.addEventListener('click', () => {
+      basket.add(tiers[index], prices[index]);
+    });
+  });
+
+  // Инициализация
+  basket.updateUI();
+});
+</script>
+<script>
+  const sliderThumb = document.getElementById('sliderThumb');
+  const sliderProgress = document.getElementById('sliderProgress');
+  const sliderValue = document.getElementById('sliderValue');
+  const track = document.querySelector('.slider-track');
+
+  let isDragging = false;
+  let startX, startLeft;
+
+  function updateSlider(clientX) {
+    const rect = track.getBoundingClientRect();
+    let position = (clientX - rect.left) / rect.width;
+    position = Math.max(0, Math.min(1, position));
+    const percent = position * 100;
+
+    sliderProgress.style.width = `${percent}%`;
+    sliderThumb.style.left = `${percent}%`;
+    sliderValue.textContent = Math.round(percent);
+
+    return percent;
+  }
+
+  track.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    updateSlider(e.clientX);
+  });
+
+  sliderThumb.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    e.stopPropagation();
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    updateSlider(e.clientX);
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  track.addEventListener('click', (e) => {
+    updateSlider(e.clientX);
+  });
+</script>
+
+<script>
+  const list = document.getElementById('selectableList');
+  let lastSelected = null;
+
+  list.addEventListener('mousedown', (e) => {
+    e.preventDefault();
+  });
+
+  list.addEventListener('click', (e) => {
+    if (e.target.tagName !== 'LI') return;
+
+    const isCtrlOrCmd = e.ctrlKey || e.metaKey;
+
+    if (!isCtrlOrCmd) {
+      document.querySelectorAll('#selectableList li.selected').forEach(el => {
+        el.classList.remove('selected');
+      });
+      lastSelected = e.target;
+    }
+
+    e.target.classList.toggle('selected');
+
+    if (!isCtrlOrCmd) {
+      e.target.classList.add('selected');
+    }
+  });
+</script>
+
+
+<!-- Регистрация -->
+<script>
+  const regIcon = document.getElementById('regIcon');
+  const captchaModal = document.getElementById('captchaModal');
+  const regModal = document.getElementById('regModal');
+  const captchaPrompt = document.getElementById('captchaPrompt');
+  const captchaAnswer = document.getElementById('captchaAnswer');
+  const submitCaptcha = document.getElementById('submitCaptcha');
+  const captchaError = document.getElementById('captchaError');
+  const regForm = document.getElementById('regForm');
+  const regError = document.getElementById('regError');
+  let num1, num2;
+
+  function generateCaptcha() {
+    num1 = Math.floor(Math.random() * 10) + 1;
+    num2 = Math.floor(Math.random() * 10) + 1;
+    captchaPrompt.textContent = `Сколько будет: ${num1} + ${num2}?`;
+    captchaAnswer.value = '';
+    captchaError.textContent = '';
+  }
+
+  regIcon.addEventListener('click', () => {
+    generateCaptcha();
+    captchaModal.classList.add('show');
+  });
+
+  [captchaModal, regModal].forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('show');
+    });
+  });
+
+  submitCaptcha.addEventListener('click', () => {
+    const ans = parseInt(captchaAnswer.value);
+    if (isNaN(ans)) {
+      captchaError.textContent = 'Введите число';
+      return;
+    }
+    if (ans === num1 + num2) {
+      captchaModal.classList.remove('show');
+      regModal.classList.add('show');
+    } else {
+      captchaError.textContent = 'Неверно! Попробуйте ещё раз.';
+      generateCaptcha(); 
+    }
+  });
+
+  regForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    regError.textContent = '';
+
+    const name = document.getElementById('regName').value.trim();
+    const email = document.getElementById('regEmail').value.trim();
+    const password = document.getElementById('regPassword').value;
+
+    if (!name || name.length < 2) {
+      regError.textContent = 'Имя должно быть от 2 символов';
+      return;
+    }
+    if (!email || !email.includes('@')) {
+      regError.textContent = 'Введите корректную почту';
+      return;
+    }
+    if (!password || password.length < 6) {
+      regError.textContent = 'Пароль должен быть не менее 6 символов';
+      return;
+    }
+
+    alert('✅ Регистрация успешна!\nДобро пожаловать, ' + name + '!');
+    regModal.classList.remove('show');
+    regForm.reset();
+  });
+</script>
+<!-- Эффект паралакса -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const parallaxLayer = document.getElementById('parallaxLayer');
+    const fadeItems = document.querySelectorAll('section, .scientists-cards, #conclusion');
+    fadeItems.forEach(item => {
+      item.classList.add('fade-in-item');
+    });
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      if (parallaxLayer) {
+        parallaxLayer.style.transform = `translateY(${scrollY * 0.4}px)`;
+      }
+      fadeItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 100;
+        if (isVisible) {
+          item.classList.add('visible');
+        }
+      });
+    });
+    setTimeout(() => {
+      fadeItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight - 100 && rect.bottom > 100;
+        if (isVisible) {
+          item.classList.add('visible');
+        }
+      });
+    }, 100);
+  });
+</script>
+<!-- Уведомления -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const notificationList = document.querySelector('.notification-list');
+    const badge = document.querySelector('.notification-badge');
+    const allNotifications = [
+      '🎉 Вам доступна бесплатная онлайн консультация!',
+      '👥 Группа "Транзактный анализ для начинающих" — запись открыта',
+      '🔥 Скидка 20% на все курсы по промокоду <strong>PSYHOLOGI</strong>!',
+      '🎁 Подарок новым участникам: бесплатный вебинар "Как выйти из психологических игр"'
+    ];
+    function createNotificationItem(text) {
+      const li = document.createElement('li');
+      li.innerHTML = `${text} <button class="close-notification">&times;</button>`;
+      li.style.display = 'flex';
+      li.style.alignItems = 'center';
+      li.style.opacity = '0';
+      li.style.transition = 'opacity 0.3s ease';
+
+      const closeBtn = li.querySelector('.close-notification');
+      closeBtn.style.cssText = `
+        background: none;
+        border: none;
+        color: #777;
+        font-weight: bold;
+        margin-left: 8px;
+        cursor: pointer;
+        font-size: 18px;
+        line-height: 1;
+        flex-shrink: 0;
+      `;
+
+      setTimeout(() => {
+        li.style.opacity = '1';
+      }, 10);
+
+      closeBtn.addEventListener('click', function () {
+        li.style.opacity = '0';
+        setTimeout(() => {
+          if (li.parentNode) {
+            li.parentNode.removeChild(li);
+            badge.textContent = notificationList.children.length;
+          }
+        }, 300);
+      });
+
+      return li;
+    }
+    notificationList.innerHTML = '';
+    for (let i = 0; i < 2; i++) {
+      notificationList.appendChild(createNotificationItem(allNotifications[i]));
+    }
+    badge.textContent = 2;
+    setTimeout(() => {
+      for (let i = 2; i < 4; i++) {
+        notificationList.appendChild(createNotificationItem(allNotifications[i]));
+      }
+      badge.textContent = notificationList.children.length;
+    }, 5000);
+  });
+</script>
+<!-- Смена темы -->
+<script>
+  const themes = {
+    light: {
+      '--color-bg': '#f8f4ed',
+      '--color-text': '#222',
+      '--color-primary': '#34495e',
+      '--color-secondary': '#34495e',
+      '--color-dark': '#2c3e50',
+      '--color-white': '#fff',
+      '--color-accent': '#3498db',
+      '--color-link-hover-bg': '#f0f5f9',
+      '--color-border-light': '#eee',
+      '--color-border-medium': '#ccc',
+      '--glass-bg': 'rgba(255, 255, 255, 0.08)',
+    },
+    dark: {
+      '--color-bg': '#1e1e1e',          
+      '--color-text': '#e0e0e0',       
+      '--color-primary': '#e0e0e0',     
+      '--color-secondary': '#e0e0e0',
+      '--color-dark': '#e0e0e0',
+      '--color-white': '#2d2d2d',       
+      '--color-accent': '#4fc3f7',
+      '--color-link-hover-bg': 'rgba(100, 181, 246, 0.1)',
+      '--color-border-light': '#333',
+      '--color-border-medium': '#444',
+      '--glass-bg': 'rgba(45, 45, 45, 0.6)',
+    }
+  };
+
+  const themeToggle = document.getElementById('themeToggle');
+  const root = document.documentElement;
+
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  applyTheme(savedTheme);
+
+  function applyTheme(themeName) {
+    const theme = themes[themeName];
+    if (!theme) return;
+    for (const [key, value] of Object.entries(theme)) {
+      root.style.setProperty(key, value);
+    }
+    themeToggle.textContent = themeName === 'dark' ? '☀️' : '🌙';
+    localStorage.setItem('theme', themeName);
+  }
+
+  themeToggle?.addEventListener('click', () => {
+    const current = localStorage.getItem('theme') || 'light';
+    const next = current === 'light' ? 'dark' : 'light';
+    applyTheme(next);
+  });
+</script>
