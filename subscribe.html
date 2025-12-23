@@ -90,35 +90,38 @@
 </section>
 
 <!-- Подписки -->
-  <section class="subscription-cards">
+<section class="subscription-cards">
   <h2>Выберите свой уровень доступа к знаниям</h2>
   <div class="cards-grid">
-    <div class="sub-card">
+    <div class="sub-card" draggable="true" data-tier="Новичок" data-price="5">
       <h3>Новичок</h3>
-      <div class="price">$5</div>
+      <div class="price">399 ₽</div>
       <p>Базовый доступ к материалам. Идеально для старта.</p>
       <button class="btn-cart">Добавить в корзину</button>
     </div>
-    <div class="sub-card">
+    <div class="sub-card" draggable="true" data-tier="Любитель" data-price="19">
       <h3>Любитель</h3>
-      <div class="price">$19</div>
+      <div class="price">1499 ₽</div>
       <p>Полный доступ + практические задания и тесты.</p>
       <button class="btn-cart">Добавить в корзину</button>
     </div>
-    <div class="sub-card">
+    <div class="sub-card" draggable="true" data-tier="Гуру" data-price="29">
       <h3>Гуру</h3>
-      <div class="price">$29</div>
+      <div class="price">1999 ₽</div>
       <p>Всё включено + консультации и персональная поддержка.</p>
       <button class="btn-cart">Добавить в корзину</button>
     </div>
   </div>
-  </section>
+</section>
 
 <!-- Корзина -->
-  <div id="basket">
-    <button id="openBasket">🛒 Корзина (<span id="basketCount">0</span>)</button>
-    <div id="basketList"></div>
+<div id="basket">
+  <button id="openBasket">🛒 Корзина (<span id="basketCount">0</span>)</button>
+  <div id="basketList"></div>
+  <div id="basketDropZone" style="display: none; margin-top: 1rem; padding: 1rem; border: 2px dashed #ccc; border-radius: 8px; text-align: center; color: #777;">
+    Перетащите сюда подписку
   </div>
+</div>
 
     <hr>
 
@@ -206,10 +209,10 @@
 <!-- КОРЗИНА -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  // === СУЩЕСТВУЮЩАЯ ЛОГИКА КОРЗИНЫ ===
   const basket = {
     items: [],
     total: 0,
-
     add(tier, price) {
       const existing = this.items.find(item => item.tier === tier);
       if (existing) {
@@ -219,7 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       this.updateUI();
     },
-
     changeQuantity(index, delta) {
       if (index < 0 || index >= this.items.length) return;
       this.items[index].quantity += delta;
@@ -228,13 +230,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       this.updateUI();
     },
-
     clear() {
       this.items = [];
       this.total = 0;
       this.updateUI();
     },
-
     sort(ascending = true) {
       this.items.sort((a, b) => {
         const totalA = a.price * a.quantity;
@@ -243,20 +243,16 @@ document.addEventListener('DOMContentLoaded', () => {
       });
       this.updateUI();
     },
-
     updateUI() {
       const countEl = document.getElementById('basketCount');
       const listEl = document.getElementById('basketList');
-
       let totalCount = 0;
       this.total = 0;
       this.items.forEach(item => {
         totalCount += item.quantity;
         this.total += item.price * item.quantity;
       });
-
       countEl.textContent = totalCount;
-
       if (this.items.length === 0) {
         listEl.innerHTML = '<p>Корзина пуста</p>';
       } else {
@@ -284,7 +280,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <button id="clearBasketBtn">Очистить корзину</button>
         `;
       }
-
       // Обработчики кнопок
       document.querySelectorAll('.remove-item').forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -292,31 +287,28 @@ document.addEventListener('DOMContentLoaded', () => {
           this.changeQuantity(index, -1);
         });
       });
-
       document.querySelectorAll('.add-item').forEach(btn => {
         btn.addEventListener('click', (e) => {
           const index = parseInt(e.target.dataset.index);
           this.changeQuantity(index, +1);
         });
       });
-
       document.querySelector('.sort-asc')?.addEventListener('click', () => this.sort(true));
       document.querySelector('.sort-desc')?.addEventListener('click', () => this.sort(false));
-
       document.getElementById('clearBasketBtn')?.addEventListener('click', () => this.clear());
     },
-
     toggle() {
       const list = document.getElementById('basketList');
       const isVisible = list.style.display === 'block';
       list.style.display = isVisible ? 'none' : 'block';
+      
+      // Показываем/скрываем зону drop
+      const dropZone = document.getElementById('basketDropZone');
+      dropZone.style.display = isVisible ? 'none' : 'block';
     }
   };
 
-  // Открытие корзины
-  document.getElementById('openBasket')?.addEventListener('click', () => basket.toggle());
-
-  // Добавление подписок
+  // === КНОПКИ "Добавить в корзину" ===
   document.querySelectorAll('.btn-cart').forEach((btn, index) => {
     const tiers = ['Новичок', 'Любитель', 'Гуру'];
     const prices = [5, 19, 29];
@@ -325,10 +317,43 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Инициализация
+  // === DRAG-AND-DROP ===
+  const dropZone = document.getElementById('basketDropZone');
+  const cards = document.querySelectorAll('.sub-card[draggable="true"]');
+
+  cards.forEach(card => {
+    card.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text/plain', JSON.stringify({
+        tier: card.dataset.tier,
+        price: parseFloat(card.dataset.price)
+      }));
+      card.classList.add('drag-over');
+    });
+    card.addEventListener('dragend', () => {
+      card.classList.remove('drag-over');
+    });
+  });
+
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('drag-over');
+  });
+  dropZone.addEventListener('dragleave', () => {
+    dropZone.classList.remove('drag-over');
+  });
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+    const data = JSON.parse(e.dataTransfer.getData('text/plain'));
+    basket.add(data.tier, data.price);
+  });
+
+  // === ИНИЦИАЛИЗАЦИЯ ===
   basket.updateUI();
+  document.getElementById('openBasket')?.addEventListener('click', () => basket.toggle());
 });
 </script>
+
 <script>
   const sliderThumb = document.getElementById('sliderThumb');
   const sliderProgress = document.getElementById('sliderProgress');
