@@ -1,2 +1,1 @@
-# NikishinMA_Development
-Клиентская часть интернет-ресурса «Домашняя психология»
+Client-side component of the "Home Psychology" web resource
